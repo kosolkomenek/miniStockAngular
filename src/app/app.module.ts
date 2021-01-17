@@ -17,12 +17,17 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DialogProductComponent } from './dialog-product/dialog-product.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginRegisterComponent,
-    DashboardComponent
+    DashboardComponent,
+    DialogProductComponent
   ],
   imports: [
     BrowserModule,
@@ -36,9 +41,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatCheckboxModule,
     MatIconModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogProductComponent]
 })
 export class AppModule { }

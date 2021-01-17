@@ -8,7 +8,7 @@ import { ProductModel } from './ProductModel';
 })
 export class ProductService {
   
-  apiUrl = "http://localhost/api";
+  apiUrl = "http://192.168.64.2/dashboard";
 
   constructor(private http: HttpClient) { }
 
@@ -20,5 +20,11 @@ export class ProductService {
 
   getProduct():Observable<ProductModel>{
      return this.http.get<ProductModel>(this.apiUrl +'/product.php');
+  }
+
+  save(product: any): Observable<ProductModel>{
+    return this.http.post<ProductModel>(this.apiUrl +'/save.php', product, {
+      headers: {'content-type':'application/x-www-form-urlencoded'}
+    })
   }
 }
